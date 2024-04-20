@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"file",
+				"file_path"
+			],
+			[
+				"wi",
+				"working_dir"
+			],
+			[
 				"print",
 				"printf\tprintf …"
 			],
@@ -275,56 +283,8 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "supragy/supragy.py",
-			"settings":
-			{
-				"buffer_size": 968,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			},
-			"undo_stack":
-			[
-			]
-		},
-		{
-			"file": "manimVideos.sublime-project",
-			"settings":
-			{
-				"buffer_size": 785,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			},
-			"undo_stack":
-			[
-				[
-					4,
-					1,
-					"left_delete",
-					null,
-					"AQAAABICAAAAAAAAEgIAAAAAAAAFAAAAX25hbWU",
-					"AQAAAAAAAAABAAAAEgIAAAAAAAAXAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					7,
-					5,
-					"right_delete",
-					null,
-					"BQAAAIwCAAAAAAAAjAIAAAAAAAABAAAAX4wCAAAAAAAAjAIAAAAAAAABAAAAbowCAAAAAAAAjAIAAAAAAAABAAAAYYwCAAAAAAAAjAIAAAAAAAABAAAAbYwCAAAAAAAAjAIAAAAAAAABAAAAZQ",
-					"AQAAAAAAAAABAAAAjAIAAAAAAACMAgAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					10,
-					5,
-					"right_delete",
-					null,
-					"BQAAAAQDAAAAAAAABAMAAAAAAAABAAAAXwQDAAAAAAAABAMAAAAAAAABAAAAbgQDAAAAAAAABAMAAAAAAAABAAAAYQQDAAAAAAAABAMAAAAAAAABAAAAbQQDAAAAAAAABAMAAAAAAAABAAAAZQ",
-					"AQAAAAAAAAABAAAABAMAAAAAAAAEAwAAAAAAAAAAAAAAAPC/"
-				]
-			]
-		}
 	],
-	"build_system": "OpenGL - LOW",
+	"build_system": "Cairo - HIGH",
 	"build_system_choices":
 	[
 		[
@@ -699,7 +659,7 @@
 				]
 			],
 			[
-				"OpenGL - LOW",
+				"Cairo - HIGH",
 				""
 			]
 		],
@@ -1132,6 +1092,22 @@
 		"selected_items":
 		[
 			[
+				"comm",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Add All"
+			],
+			[
+				"vpf",
+				"View Package File"
+			],
+			[
+				"set tyntax ignore",
+				"Set Syntax: Git Ignore"
+			],
+			[
 				"commit",
 				"Git: Commit"
 			],
@@ -1158,10 +1134,6 @@
 			[
 				"theme",
 				"UI: Select Theme"
-			],
-			[
-				"vpf",
-				"View Package File"
 			],
 			[
 				"git ",
@@ -1340,19 +1312,19 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Dev/PythonProjects/manimVideos",
-		"/C/Dev/PythonProjects/manimVideos/supragy"
+		"/C/Dev/PythonProjects/manimVideos"
 	],
 	"file_history":
 	[
-		"/C/Dev/PythonProjects/manimVideos/manimVideos.sublime-project",
-		"/C/Dev/PythonProjects/manimVideos/README.md",
-		"/C/Dev/PythonProjects/manimVideos/supragy/supragy.py",
-		"/C/Users/mishr/AppData/Roaming/Sublime Text/Packages/ProjectSpecificKeys/README.md",
+		"/C/Dev/PythonProjects/manimVideos/supragy/render.py",
 		"/C/Dev/PythonProjects/manimVideos/Makefile",
-		"/C/Dev/PythonProjects/manimVideos/supragy.py",
+		"/C/Dev/PythonProjects/manimVideos/manimVideos.sublime-project",
+		"/C/Dev/PythonProjects/manimVideos/supragy/supragy.py",
 		"/C/Dev/PythonProjects/manimVideos/.gitignore",
 		"/C/Users/mishr/AppData/Roaming/Sublime Text/Packages/Git Formats/tests/syntax_test_git_ignore",
+		"/C/Dev/PythonProjects/manimVideos/README.md",
+		"/C/Users/mishr/AppData/Roaming/Sublime Text/Packages/ProjectSpecificKeys/README.md",
+		"/C/Dev/PythonProjects/manimVideos/supragy.py",
 		"/C/Dev/C++/starting_opengl/src/main.c",
 		"/C/Dev/C++/starting_opengl/src/remain.c",
 		"/C/Dev/C++/starting_opengl/src/shaders.h",
@@ -1430,7 +1402,7 @@
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -1444,6 +1416,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\"work"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1451,6 +1424,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"//\"work"
 		],
 		"reverse": false,
 		"scrollbar_highlights": true,
@@ -1465,111 +1439,12 @@
 		{
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "supragy/supragy.py",
-					"selected": true,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 968,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								419,
-								419
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html, text.xml"
-								},
-								{
-									"rhs_empty": true,
-									"selector": "punctuation.accessor"
-								},
-								{
-									"characters": "\\",
-									"selector": "text.tex.latex"
-								},
-								{
-									"characters": ".[\"'",
-									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
-									"server": "LSP-pyright"
-								}
-							],
-							"lsp_active": true,
-							"lsp_uri": "file:///C:/Dev/PythonProjects/manimVideos/supragy/supragy.py",
-							"show_definitions": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "manimVideos.sublime-project",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 785,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								772,
-								772
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"selector": "meta.mapping.key punctuation.definition.string.begin - meta.setting-value.sublime-settings meta.mapping.value"
-								},
-								{
-									"selector": "- comment - punctuation.separator - punctuation.definition.string.end - constant.character.escape - invalid.illegal - punctuation.section.mapping - punctuation.section.sequence",
-									"server": "LSP-json"
-								}
-							],
-							"lsp_active": true,
-							"lsp_uri": "file:///C:/Dev/PythonProjects/manimVideos/manimVideos.sublime-project",
-							"show_definitions": false,
-							"syntax": "Packages/PackageDev/Package/Sublime Text Project/Sublime Text Project.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 41.0
+		"height": 37.0
 	},
 	"input":
 	{
@@ -1634,7 +1509,7 @@
 	"project": "manimVideos.sublime-project",
 	"replace":
 	{
-		"height": 78.0
+		"height": 90.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1644,8 +1519,16 @@
 		"selected_items":
 		[
 			[
+				"mak",
+				"Makefile"
+			],
+			[
 				"pro",
 				"manimVideos.sublime-project"
+			],
+			[
+				"gitigno",
+				".gitignore"
 			],
 			[
 				"proje",
@@ -1666,10 +1549,6 @@
 			[
 				"shade",
 				"starting_opengl\\src\\shaders.h"
-			],
-			[
-				"mak",
-				"starting_opengl\\Makefile"
 			],
 			[
 				"HEllo",
