@@ -9,32 +9,38 @@
 		{
 			"name": "Cairo - HIGH",
 			"target": "terminus_exec",
-			"shell_cmd": "make all QUALITY=HIGH FILE=$file_name",
+			"shell_cmd": "make all QUALITY=HIGH FILE=$file",
+			"working_dir": "$file_path"
 		},
 		{
 			"name": "Cairo - MID",
 			"target": "terminus_exec",
-			"shell_cmd":"make all QUALITY=MEDIUM FILE=$file_name",
+			"shell_cmd":"make all QUALITY=MEDIUM FILE=$file",
+			"working_dir": "$file_path"
 		},
 		{
 			"name": "Cairo - LOW",
 			"target": "terminus_exec",
-			"shell_cmd": "make all QUALITY=LOW FILE=$file_name",
+			"shell_cmd": "make all QUALITY=LOW FILE=$file",
+			"working_dir": "$file_path"
 		},
 		{
 			"name": "OpenGL - HIGH",
 			"target": "terminus_exec",
-			"shell_cmd": "make opengl QUALITY=HIGH FILE=$file_name",
+			"shell_cmd": "make opengl QUALITY=HIGH FILE=$file",
+			"working_dir": "$file_path"
 		},
 		{
 			"name": "OpenGL - MID",
 			"target": "terminus_exec",
-			"shell_cmd":"make opengl QUALITY=MEDIUM FILE=$file_name",
+			"shell_cmd":"make opengl QUALITY=MEDIUM FILE=$file",
+			"working_dir": "$file_path"
 		},
 		{
 			"name": "OpenGL - LOW",
 			"target": "terminus_exec",
-			"shell_cmd": "make opengl QUALITY=LOW FILE=$file_name",
+			"shell_cmd": "make opengl QUALITY=LOW FILE=$file",
+			"working_dir": "$file_path"
 		},
 	]
 }
