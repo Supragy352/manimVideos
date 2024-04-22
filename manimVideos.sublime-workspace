@@ -283,8 +283,74 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "parimal/circle.py",
+			"settings":
+			{
+				"buffer_size": 253,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"insert",
+					{
+						"characters": "\n\nself."
+					},
+					"CgAAAOcAAAAAAAAA6AAAAAAAAAAAAAAA6AAAAAAAAADwAAAAAAAAAAAAAADwAAAAAAAAAPEAAAAAAAAAAAAAAPEAAAAAAAAA+QAAAAAAAAAAAAAA6AAAAAAAAADoAAAAAAAAAAgAAAAgICAgICAgIPEAAAAAAAAA8gAAAAAAAAAAAAAA8gAAAAAAAADzAAAAAAAAAAAAAADzAAAAAAAAAPQAAAAAAAAAAAAAAPQAAAAAAAAA9QAAAAAAAAAAAAAA9QAAAAAAAAD2AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA5wAAAAAAAADnAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					5,
+					1,
+					"insert",
+					{
+						"characters": "wait"
+					},
+					"BAAAAPYAAAAAAAAA9wAAAAAAAAAAAAAA9wAAAAAAAAD4AAAAAAAAAAAAAAD4AAAAAAAAAPkAAAAAAAAAAAAAAPkAAAAAAAAA+gAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA9gAAAAAAAAD2AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"insert_completion",
+					{
+						"completion": "lsp_select_completion {\"index\":0,\"session_name\":\"LSP-pyright\"}",
+						"format": "command",
+						"keep_prefix": false,
+						"must_insert": false,
+						"trigger": "wait"
+					},
+					"AgAAAPYAAAAAAAAA9gAAAAAAAAAEAAAAd2FpdPYAAAAAAAAA+gAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA+gAAAAAAAAD6AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					1,
+					"insert_snippet",
+					{
+						"contents": "($0)"
+					},
+					"AQAAAPoAAAAAAAAA/AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA+gAAAAAAAAD6AAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					8,
+					1,
+					"insert",
+					{
+						"characters": "2"
+					},
+					"AQAAAPsAAAAAAAAA/AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA+wAAAAAAAAD7AAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
 	],
-	"build_system": "Cairo - HIGH",
+	"build_system": "Cairo - LOW",
 	"build_system_choices":
 	[
 		[
@@ -604,6 +670,94 @@
 			],
 			[
 				"Build Project",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Cairo - HIGH",
+					""
+				],
+				[
+					"Cairo - LOW",
+					""
+				],
+				[
+					"Cairo - MID",
+					""
+				],
+				[
+					"OpenGL - HIGH",
+					""
+				],
+				[
+					"OpenGL - LOW",
+					""
+				],
+				[
+					"OpenGL - MID",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Cairo - LOW",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Cairo - HIGH",
+					""
+				],
+				[
+					"Cairo - LOW",
+					""
+				],
+				[
+					"Cairo - MID",
+					""
+				],
+				[
+					"OpenGL - HIGH",
+					""
+				],
+				[
+					"OpenGL - LOW",
+					""
+				],
+				[
+					"OpenGL - MID",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Cairo - LOW",
 				""
 			]
 		],
@@ -1092,6 +1246,18 @@
 		"selected_items":
 		[
 			[
+				"term",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"termin",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
+				"terminus ",
+				"Terminus: Open Default Shell in Panel"
+			],
+			[
 				"comm",
 				"Git: Commit"
 			],
@@ -1312,10 +1478,10 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Dev/PythonProjects/manimVideos"
 	],
 	"file_history":
 	[
+		"/C/Users/parim/OneDrive/Desktop/ManimGit/manimVideos/parimal/circle.py",
 		"/C/Dev/PythonProjects/manimVideos/supragy/render.py",
 		"/C/Dev/PythonProjects/manimVideos/Makefile",
 		"/C/Dev/PythonProjects/manimVideos/manimVideos.sublime-project",
@@ -1402,7 +1568,7 @@
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 29.6
 	},
 	"find_in_files":
 	{
@@ -1439,12 +1605,63 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "parimal/circle.py",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html, text.xml"
+								},
+								{
+									"rhs_empty": true,
+									"selector": "punctuation.accessor"
+								},
+								{
+									"characters": ".[\"'",
+									"selector": "meta.tag, source - comment - string.quoted.double.block - string.quoted.single.block - string.unquoted.heredoc",
+									"server": "LSP-pyright"
+								}
+							],
+							"lsp_active": true,
+							"lsp_uri": "file:///C:/Users/parim/OneDrive/Desktop/ManimGit/manimVideos/parimal/circle.py",
+							"show_definitions": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 37.0
+		"height": 29.6
 	},
 	"input":
 	{
@@ -1481,6 +1698,14 @@
 	{
 		"height": 306.0
 	},
+	"output.Terminus":
+	{
+		"height": 138.399993896
+	},
+	"output.Terminus 2":
+	{
+		"height": 138.399993896
+	},
 	"output.Terminus Build Results":
 	{
 		"height": 221.0
@@ -1509,7 +1734,7 @@
 	"project": "manimVideos.sublime-project",
 	"replace":
 	{
-		"height": 90.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
