@@ -1312,7 +1312,7 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Dev/PythonProjects/manimVideos"
+		"/D/Users/Pranav/Documents/GitHub/manimVideos"
 	],
 	"file_history":
 	[
@@ -1402,7 +1402,7 @@
 	],
 	"find":
 	{
-		"height": 37.0
+		"height": 28.0
 	},
 	"find_in_files":
 	{
@@ -1444,7 +1444,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 37.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -1509,7 +1509,7 @@
 	"project": "manimVideos.sublime-project",
 	"replace":
 	{
-		"height": 90.0
+		"height": 52.8
 	},
 	"save_all_on_build": true,
 	"select_file":
