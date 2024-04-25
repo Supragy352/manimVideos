@@ -1,0 +1,3 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/ManimGit/manimVideos/media/videos/rosecurve/480p15/partial_movie_files/RoseCurve/1185818338_2790288558_4192976301.mp4'
+file 'file:C:/ManimGit/manimVideos/media/videos/rosecurve/480p15/partial_movie_files/RoseCurve/624642324_1141282389_653944808.mp4'
