@@ -1,0 +1,4 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/parim/Dev/GitUpload/manimVideos/manimParimal/media/videos/graph/480p15/partial_movie_files/Graph_movement/1185818338_3470448537_223132457.mp4'
+file 'file:C:/Users/parim/Dev/GitUpload/manimVideos/manimParimal/media/videos/graph/480p15/partial_movie_files/Graph_movement/624642324_209122073_1158204196.mp4'
+file 'file:C:/Users/parim/Dev/GitUpload/manimVideos/manimParimal/media/videos/graph/480p15/partial_movie_files/Graph_movement/624642324_2475379470_3216427421.mp4'
