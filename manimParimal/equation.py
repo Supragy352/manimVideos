@@ -4,6 +4,7 @@ import numpy as np
 
 last_entry = None
 
+#Curve Equation
 def curve_eqn(t, a, above, First, y_range):
     global last_entry
     x = t
@@ -15,9 +16,9 @@ def curve_eqn(t, a, above, First, y_range):
             if value_inside_sqrt >= 0:
                 y = np.sqrt(value_inside_sqrt) if above else -np.sqrt(value_inside_sqrt)
                 if y_min <= y <= y_max:
-                    last_entry = [x,y,0]
-                    # print("current points",x,y,0)
-                    return np.array([x, y, 0])
+                    last_entry = [ x, y, 0]
+                    # print("current points", x, y)
+                    return np.array([ x, y, 0])
     # print("last entry",last_entry)
     return np.array(last_entry)
 
@@ -37,9 +38,6 @@ class PlotCurve(Scene):
             axis_config={"color": WHITE},
         )
 
-        # Highlight Symmetry
-        axes_symmetry = axes.copy()
-
         # Text
         curve_eqn_text = Text("Curve Equation: y^2(a^2 - x^2) = a^3 * x").scale(0.5).to_edge(UL)
         symmetry_text = Text("Symmetry: about x-axis").scale(0.5).next_to(curve_eqn_text, DOWN, aligned_edge=LEFT)
@@ -48,6 +46,7 @@ class PlotCurve(Scene):
         asymptote_text = Text("Asymptote: x = +/- a , y = 0").scale(0.5).next_to(tangent_text, DOWN, aligned_edge=LEFT)
 
         # Highlight x-axis
+        axes_symmetry = axes.copy()
         self.play(Create(axes), Create(curve_eqn_text), run_time=3)
         self.play(Write(symmetry_text))
         self.play(axes_symmetry[0].animate.set_color("#000080"))
