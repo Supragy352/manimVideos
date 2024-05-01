@@ -1,3 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/ManimGit/manimVideos/media/videos/rosecurve/1080p60/partial_movie_files/RoseCurve/3529212410_2211670013_4192976301.mp4'
-file 'file:C:/ManimGit/manimVideos/media/videos/rosecurve/1080p60/partial_movie_files/RoseCurve/3040924799_1141282389_1551816589.mp4'
