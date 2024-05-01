@@ -1,4 +1,5 @@
 from manim import *
+
 class Cartesian(Scene):
     def construct(self):
         axes = Axes(
@@ -15,8 +16,8 @@ class Cartesian(Scene):
         point_1 = Dot(). move_to(axes.coords_to_point(5, 7))
         self.play(Create(point))
         self.play(Create(point_1))
+    
 
-        # Add label to the point
         label = MathTex("(2, 3)").next_to(point, DOWN + RIGHT)
         label_1 = MathTex("(5, 7)").next_to(point_1, DOWN + RIGHT)
         self.play(Write(label))
