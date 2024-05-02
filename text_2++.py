@@ -155,7 +155,7 @@ class FirstText(Scene):
 		self.play(Write(text_25))
 		self.wait(1)
 
-		line_1 = Line(start=array([-4., -5., 0.]), end=array([9.5, -5., 0.]), color=RED)
+		line_1 = Line(start=array([-3., -5., 0.]), end=array([8.5, -5., 0.]), color=RED)
 		self.play(Create(line_1))
 		self.wait()
 
@@ -170,32 +170,32 @@ class FirstText(Scene):
 
 		text_27 = Text("Across y" , font_size=28).next_to(text_26)
 		self.play(Write(text_27))
-		text_28 = MathTex(r"{(x)^2+4a^2}=0", font_size=28).next_to(text_27, DOWN)
+		text_28 = MathTex(r"{(x)^2+4a^2}=0", font_size=50).next_to(text_27, DOWN)
 		self.play(Write(text_28))
-		text_29 =MathTex(r"{(x)^2=-4a^2}", font_size=28).next_to(text_27, DOWN)
+		text_29 =MathTex(r"{(x)^2=-4a^2}", font_size=50).next_to(text_28, DOWN)
 		self.play(Write(text_29))
-		text_30 = Text("Not Possible").next_to(text_29, DOWN)
+		text_30 = Text("Not Possible", font_size=28).next_to(text_29, DOWN)
 		self.play(Write(text_30))
 		self.wait(1)
 
-		self.remove((text_26), (text_27), (text_28), (text_29), (text_30))
+		self.remove((text_27), (text_28), (text_29), (text_30))
 		self.wait(1)
 
 
 		text_31 = Text("Across x" , font_size=28).next_to(text_26)
 		self.play(Write(text_31))
-		text_32 = MathTex(r"{y(x)^2}=0", font_size=28).next_to(text_31, DOWN)
+		text_32 = MathTex(r"{y(x)^2}=0", font_size=36).next_to(text_31, DOWN)
 		self.play(Write(text_32))
-		text_33 =MathTex(r"y=0", font_size=28).next_to(text_32, DOWN)
+		text_33 =MathTex(r"y=0", font_size=36).next_to(text_32, DOWN)
 		self.play(Write(text_33))
-		text_34 = Text("Due to y = 0, Assymptote is parallel to x-axis").next_to(text_33, DOWN)
+		text_34 = Text("Due to y = 0, Assymptote is parallel to x-axis", font_size=32).next_to(text_33, DOWN)
 		self.play(Write(text_34))
 		self.wait(1)
 
-		line_2 = Line(start=array([-4., -6., 0.]), end=array([-5., -7., 0.]), color=BLUE)
-		line_3 = Line(start=array([-4., -9., 0.]), end=array([-5., -9., 0.]), color=BLUE)
-		line_4 = Line(start=array([-8.5, -7., 0.]), end=array([9.5, -7., 0.]), color=BLUE)
-		line_5 = Line(start=array([-8.5, -9., 0.]), end=array([9.5, -9., 0.]), color=BLUE)
+		line_2 = Line(start=array([-4.5, -6., 0.]), end=array([-2, -6., 0.]), color=YELLOW)
+		line_3 = Line(end=array([7, -6., 0.]), start=array([9.5, -6., 0.]), color=YELLOW)
+		line_4 = Line(start=array([-4.5, -7.3, 0.]), end=array([-2, -7.3, 0.]), color=YELLOW)
+		line_5 = Line(end=array([7, -7.3, 0.]), start=array([9.5, -7.3, 0.]), color=YELLOW)
 
 		self.play(Create(line_2), Create(line_3), Create(line_4), Create(line_5))
 		self.wait(1)
@@ -223,30 +223,33 @@ class FirstText(Scene):
 		curve = ax.plot(lambda x: 64/(x*x+16), color=RED)
 		area = ax.get_area(curve, x_range=(-7, 8), color=BLUE)
 		self.play(Create(curve, run_time=5), Create(area, run_time=5))
-		self.wait(10)
+		self.wait(3)
 
-		self.remove((curve),(area), (ax), (line), (line_1), (line_2), (line_3), (line_4), (line_5), (point))
+		self.remove((curve),(area), (ax), (line), (line_1), (line_2), (line_3), (line_4), (line_5), (point), (label))
 
 		ax_0 = Axes(
             x_range=[-7, 8, 1],
             y_range=[-7, 8, 1],
-            )
-		point_0 = Dot().move_to(ax.coords_to_point(0,4))
+            ).next_to(transform_text_2, DOWN)
+		point_0 = Dot().move_to(ax_0.coords_to_point(0,4))
 		label_0 = MathTex("(0,4)", font_size=36).next_to(point_0, UP + RIGHT)
-		curve_0 = ax.plot(lambda x: 64/(x*x+16), color=RED)
-		area_0 = ax.get_area(curve_0, x_range=(-7, 8), color=BLUE)
+		curve_0 = ax_0.plot(lambda x: 64/(x*x+16), color=RED)
+		area_0 = ax_0.get_area(curve_0, x_range=(-7, 8), color=BLUE)
 		self.play(Create(ax_0, run_time=5)) 
 		self.play(Create(point_0))
 		self.play(Write(label_0))
 		self.play(Create(curve_0, run_time=5), Create(area_0, run_time=5))
-		self.wait(10)		
+		self.wait(10)
+		
+
 
 		# point = Dot().move_to(ax.coords_to_point(0,4))
 		# label = MathTex("(0,4)", font_size=36).next_to(point, UP + RIGHT)
 		# curve = ax.plot(lambda x: 64/(x*x+16), color=RED)
 		# area = ax.get_area(curve, x_range=(-7, 8), color=BLUE)
-		# #self.play(Create(ax, run_time=5) 
+		# #self.play(Create(ax, run_time=5)) 
 		# #self.play(Create(point))
 		# #self.play(Write(label))
 		
 		# self.wait()
+
