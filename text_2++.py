@@ -170,9 +170,9 @@ class FirstText(Scene):
 
 		text_27 = Text("Across y" , font_size=28).next_to(text_26)
 		self.play(Write(text_27))
-		text_28 = MathTex(r"{(x)^2+4a^2}=0", font_sixe=28).next_to(text_27, DOWN)
+		text_28 = MathTex(r"{(x)^2+4a^2}=0", font_size=28).next_to(text_27, DOWN)
 		self.play(Write(text_28))
-		text_29 =MathTex(r"{(x)^2=-4a^2}", font_sixe=28).next_to(text_27, DOWN)
+		text_29 =MathTex(r"{(x)^2=-4a^2}", font_size=28).next_to(text_27, DOWN)
 		self.play(Write(text_29))
 		text_30 = Text("Not Possible").next_to(text_29, DOWN)
 		self.play(Write(text_30))
@@ -184,18 +184,18 @@ class FirstText(Scene):
 
 		text_31 = Text("Across x" , font_size=28).next_to(text_26)
 		self.play(Write(text_31))
-		text_32 = MathTex(r"{y(x)^2}=0", font_sixe=28).next_to(text_31, DOWN)
+		text_32 = MathTex(r"{y(x)^2}=0", font_size=28).next_to(text_31, DOWN)
 		self.play(Write(text_32))
-		text_33 =MathTex(r"y=0", font_sixe=28).next_to(text_32, DOWN)
+		text_33 =MathTex(r"y=0", font_size=28).next_to(text_32, DOWN)
 		self.play(Write(text_33))
 		text_34 = Text("Due to y = 0, Assymptote is parallel to x-axis").next_to(text_33, DOWN)
 		self.play(Write(text_34))
 		self.wait(1)
 
-		line_2 = Line(stary=array([-4., -7., 0.]), end=array([-5., -7., 0.]), color=BLUE)
-		line_3 = Line(stary=array([-4., -9., 0.]), end=array([-5., -9., 0.]), color=BLUE)
-		line_4 = Line(stary=array([-8.5, -7., 0.]), end=array([9.5, -7., 0.]), color=BLUE)
-		line_5 = Line(stary=array([-8.5, -9., 0.]), end=array([9.5, -9., 0.]), color=BLUE)
+		line_2 = Line(start=array([-4., -6., 0.]), end=array([-5., -7., 0.]), color=BLUE)
+		line_3 = Line(start=array([-4., -9., 0.]), end=array([-5., -9., 0.]), color=BLUE)
+		line_4 = Line(start=array([-8.5, -7., 0.]), end=array([9.5, -7., 0.]), color=BLUE)
+		line_5 = Line(start=array([-8.5, -9., 0.]), end=array([9.5, -9., 0.]), color=BLUE)
 
 		self.play(Create(line_2), Create(line_3), Create(line_4), Create(line_5))
 		self.wait(1)
@@ -239,17 +239,14 @@ class FirstText(Scene):
 		self.play(Create(point_0))
 		self.play(Write(label_0))
 		self.play(Create(curve_0, run_time=5), Create(area_0, run_time=5))
-		self.wait(10)
-		
+		self.wait(10)		
 
-		
 		# point = Dot().move_to(ax.coords_to_point(0,4))
 		# label = MathTex("(0,4)", font_size=36).next_to(point, UP + RIGHT)
 		# curve = ax.plot(lambda x: 64/(x*x+16), color=RED)
 		# area = ax.get_area(curve, x_range=(-7, 8), color=BLUE)
-		# #self.play(Create(ax, run_time=5)) 
+		# #self.play(Create(ax, run_time=5) 
 		# #self.play(Create(point))
 		# #self.play(Write(label))
 		
 		# self.wait()
-

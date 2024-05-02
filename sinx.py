@@ -2,7 +2,7 @@ from ast import Lambda
 from typing_extensions import runtime
 from manim import *
 
-class Graoh(Scene):
+class Graph(Scene):
     def construct(self):
         ax = Axes(
             x_range=[-7, 8, 1],
