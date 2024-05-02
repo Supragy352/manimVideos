@@ -1,4 +1,5 @@
 from manim import *
+from numpy import array
 
 class FirstText(Scene):
 	def construct(self):
@@ -74,12 +75,12 @@ class FirstText(Scene):
             x_range=[-7, 8, 1],
             y_range=[-7, 8, 1],
             ).next_to(text_8, DOWN)
-		line = Line(start=[0, -3, 0], end=[0, 3, 0], color=GREEN).next_to(text_8, DOWN)
+		line = Line(start=array([2.3, -9, 0]), end=array([2.3, -4, 0]), color=GREEN, stroke_width=8)
 
 		self.play(Write(text_4), Write(text_5), Write(text_6), Write(text_7), Write(text_8))
 		self.wait()
 
-		self.play(Create(ax), Create(line))
+		self.play(Create(ax), Create(line, run_time=3))
 		self.wait()
 		self.remove((text_3), (text_4), (text_5), (text_6), (text_7), (text_8))
 		self.wait(1)
@@ -138,18 +139,53 @@ class FirstText(Scene):
 
 
 		text_20 = Text("3. Tangent:", font_size=36)
-		text_20.next_to(transform_text_2, DOWN-3)
+		text_20.next_to(arrow, DOWN-3)
 		self.play(Write(text_20))
 		self.wait()
 
+		text_21 = Text("Tangent at  point (0,4)", font_size=28).next_to(text_20)
+		self.play(Write(text_21))
 
-		#point = Dot().move_to(ax.coords_to_point(0,4))
-		label = MathTex("(0,4)", font_size=36).next_to(point, UP + RIGHT)
-		curve = ax.plot(lambda x: 64/(x*x+16), color=RED)
-		area = ax.get_area(curve, x_range=(-7, 8), color=BLUE)
-		#self.play(Create(ax, run_time=5)) 
-		#self.play(Create(point))
-		#self.play(Write(label))
-		self.play(Create(curve, run_time=5), Create(area, run_time=5))
+		text_22 = MathTex(r"\frac{\mathrm{d} y}{\mathrm{d} x} = 64 [\frac{\mathrm{-2}}{\mathrm{x^2+16}}] 2x = \frac{\mathrm{-256 x}}{\mathrm{x^2+16}}", font_size=50).next_to(text_21, DOWN)
+		self.play(Write(text_22))
+		
+		text_23 = Text("Puting x = 0", font_size=36).next_to(text_22, DOWN)
+		self.play(Write(text_23))
+		self.wait(3)
+		
+
+		text_24 = MathTex(r"\frac{\mathrm{d} y}{\mathrm{d} x} = 0", font_size=50).next_to(text_23, DOWN)
+		self.play(Create(text_24))
+		self.wait(1)
+
+		text_25 = Text("Hence, Tangent is parallel to x-axis at (0,4)", font_size=40).next_to(text_24, DOWN)
+		self.play(Write(text_25))
+		self.wait(1)
+
+		line_1 = Line(start=array([-4., -5., 0.]), end=array([9.5, -5., 0.]), color=RED)
+		self.play(Create(line_1))
 		self.wait()
+
+		self.remove((text_20),(text_21), (text_22), (text_23), (text_24), (text_25))
+		self.wait(1)
+
+		text_26= Text("4. Assymtote:", font_size=36)
+		text_26.next_to(arrow, DOWN-3)
+		self.play(Write(text_26))
+		self.wait()
+		
+		text_27 = Text("Highest degree of ")
+
+
+
+
+		# point = Dot().move_to(ax.coords_to_point(0,4))
+		# label = MathTex("(0,4)", font_size=36).next_to(point, UP + RIGHT)
+		# curve = ax.plot(lambda x: 64/(x*x+16), color=RED)
+		# area = ax.get_area(curve, x_range=(-7, 8), color=BLUE)
+		# #self.play(Create(ax, run_time=5)) 
+		# #self.play(Create(point))
+		# #self.play(Write(label))
+		# self.play(Create(curve, run_time=5), Create(area, run_time=5))
+		# self.wait()
 
