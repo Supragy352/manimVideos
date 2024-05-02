@@ -242,7 +242,7 @@ class FirstText(Scene):
 		self.wait(10)
 		
 
-
+		# from
 		# point = Dot().move_to(ax.coords_to_point(0,4))
 		# label = MathTex("(0,4)", font_size=36).next_to(point, UP + RIGHT)
 		# curve = ax.plot(lambda x: 64/(x*x+16), color=RED)
