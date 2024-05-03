@@ -168,7 +168,7 @@ class FirstText(Scene):
 		self.wait()
 
 
-		text_27 = Text("Across y" , font_size=28).next_to(text_26)
+		text_27 = Text("Across y" , font_size=32).next_to(text_26)
 		self.play(Write(text_27))
 		text_28 = MathTex(r"{(x)^2+4a^2}=0", font_size=50).next_to(text_27, DOWN)
 		self.play(Write(text_28))
@@ -182,11 +182,11 @@ class FirstText(Scene):
 		self.wait(1)
 
 
-		text_31 = Text("Across x" , font_size=28).next_to(text_26)
+		text_31 = Text("Across x" , font_size=32).next_to(text_26)
 		self.play(Write(text_31))
-		text_32 = MathTex(r"{y(x)^2}=0", font_size=36).next_to(text_31, DOWN)
+		text_32 = MathTex(r"{y(x)^2}=0", font_size=50).next_to(text_31, DOWN)
 		self.play(Write(text_32))
-		text_33 =MathTex(r"y=0", font_size=36).next_to(text_32, DOWN)
+		text_33 =MathTex(r"y=0", font_size=50).next_to(text_32, DOWN)
 		self.play(Write(text_33))
 		text_34 = Text("Due to y = 0, Assymptote is parallel to x-axis", font_size=32).next_to(text_33, DOWN)
 		self.play(Write(text_34))
@@ -210,7 +210,7 @@ class FirstText(Scene):
 		self.wait()
 
 		text_36 = Text("The region of curve is:", font_size=32).next_to(text_35)
-		text_37 = Text("y>0").next_to(text_36, DOWN)
+		text_37 = Text("y>0", font_size=32).next_to(text_36, DOWN)
 		text_38 = Text("y<2a", font_size=32).next_to(text_37, DOWN)
 
 		self.play(Write(text_36), Write(text_37), Write(text_38))
@@ -228,13 +228,13 @@ class FirstText(Scene):
 		self.remove((curve),(area), (ax), (line), (line_1), (line_2), (line_3), (line_4), (line_5), (point), (label))
 
 		ax_0 = Axes(
-            x_range=[-7, 8, 1],
-            y_range=[-7, 8, 1],
+            x_range=[-10, 11, 1],
+            y_range=[-10, 11, ],
             ).next_to(transform_text_2, DOWN)
 		point_0 = Dot().move_to(ax_0.coords_to_point(0,4))
 		label_0 = MathTex("(0,4)", font_size=36).next_to(point_0, UP + RIGHT)
 		curve_0 = ax_0.plot(lambda x: 64/(x*x+16), color=RED)
-		area_0 = ax_0.get_area(curve_0, x_range=(-7, 8), color=BLUE)
+		area_0 = ax_0.get_area(curve_0, x_range=(-10, 11), color=BLUE)
 		self.play(Create(ax_0, run_time=5)) 
 		self.play(Create(point_0))
 		self.play(Write(label_0))
