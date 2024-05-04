@@ -1,2 +1,0 @@
-# This file is used internally by FFMPEG.
-file 'file:C:/Users/parim/Dev/GitUpload/manimVideos/manimParimal/media/videos/text/480p15/partial_movie_files/HelloWorld/1185818338_1595637451_223132457.mp4'
