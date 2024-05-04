@@ -33,7 +33,7 @@ class PlotCurve(Scene):
         )
         
         #Introduction
-        curve_eqn_text = Tex("Trace the curve : $y^2 (a^2 - x^2) = a^3 x$")
+        curve_eqn_text = Tex("Curve Equation : $y^2 (a^2 - x^2) = a^3 x$")
         self.play(Write(curve_eqn_text),run_time = 3)
 
         self.play(
@@ -100,12 +100,12 @@ class PlotCurve(Scene):
         # Point of Intersection
         intersection_texts = [
             Tex("Point of Intersection :").scale(0.7),
-            Tex("At $x = 0$, equation becomes").scale(0.7) ,
+            Tex("At $x = 0$, the equation").scale(0.7) ,
             Tex("$y^2 (a^2 - x^2) = a^3 x$").scale(0.7),
             Tex("$y^2 (a^2 - 0) = a^3 * 0$").scale(0.7),
             Tex("$y^2 (a^2) = 0$").scale(0.7),
             Tex("$y = 0$").scale(0.7),
-            Tex("So the point of intersection is Origin $(0,0)$").scale(0.7)
+            Tex("So the curve passes through Origin $(0,0)$").scale(0.7)
         ]
 
         # Setting Text Position
