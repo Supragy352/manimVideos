@@ -50,8 +50,8 @@ class PlotCurve(Scene):
             y_length=6,
             axis_config={
             "color": BLUE,
-            "include_tip": True,  # Add arrowheads on both sides
-            "tip_length": 0.1,    # Adjust the length of the arrowheads
+            "include_tip": True,  
+            "tip_length": 0.1,    
             },
         )
 
@@ -67,8 +67,8 @@ class PlotCurve(Scene):
         axis_labels = [x_axis_label, y_axis_label]
 
         # Define the scaling and shifting parameters
-        scale_factor = 0.85  # Scaling factor
-        shift_distance = 4  # Distance to shift to the right
+        scale_factor = 0.85  
+        shift_distance = 4  
 
         # Animate scaling down and shifting to the side
         self.play(
@@ -111,7 +111,7 @@ class PlotCurve(Scene):
         # Setting Text Position
         adjust_write_Text(intersection_texts)
         
-        # Draw dot at (0, 0)
+        # Draw dot at (0, 0) and label it
         dot = Dot(color=YELLOW)
         dot.move_to(axes.coords_to_point(0, 0))
         dot_label = Tex("$(0, 0)$").scale(0.6)
@@ -133,9 +133,10 @@ class PlotCurve(Scene):
             Tex("Thus the tangent is y-axis").scale(0.7)
         ]
 
+        # Position and write tangent text
         adjust_write_Text(tangent_texts)
 
-        # Draw tangent line on y-axis
+        # Draw tangent line on y-axis and add label
         self.play(FadeOut(dot))
         y_axis_point_bottom = axes.coords_to_point(0, -2)  # Bottom point on y-axis
         y_axis_point_top = axes.coords_to_point(0, 2)  # Top point on y-axis
@@ -147,6 +148,7 @@ class PlotCurve(Scene):
         
         tangent_texts.append(tangent_label)
 
+        # remove text
         removeText(tangent_texts)
 
 
@@ -182,7 +184,7 @@ class PlotCurve(Scene):
         self.play(Create(asymptote_bottom))
         self.play(FadeIn(dot))
 
-
+        # remove text
         removeText(asymptote_text_x_axis)
 
         adjust_write_Text(asymptote_text_y_axis)
@@ -193,6 +195,8 @@ class PlotCurve(Scene):
             axes.coords_to_point(-a, axes.y_range[1]),
             color=GREEN
         )
+
+        # asymptote label for x = -a
         asymptote_left_label = Tex("$x = -a$").scale(0.6)
         asymptote_left_label.next_to(asymptote_left, LEFT).shift(UP * 0.5)
         self.play(Create(asymptote_left),Create(asymptote_left_label))
@@ -204,6 +208,7 @@ class PlotCurve(Scene):
             color=GREEN
         )
 
+        # asymptote label for x = a
         asymptote_right_label = Tex("$x = a$").scale(0.6)
         asymptote_right_label.next_to(asymptote_right, RIGHT).shift(UP * 0.5)
         self.play(Create(asymptote_right),Create(asymptote_right_label))
@@ -213,6 +218,7 @@ class PlotCurve(Scene):
 
         removeText(asymptote_text_y_axis)
 
+        # Region of the curve
         region_texts = [
             Tex("Region :").scale(0.7),
             Tex("When $x < -a$, y is real thus curve exist ").scale(0.7),
@@ -224,6 +230,7 @@ class PlotCurve(Scene):
         adjust_write_Text(region_texts)
 
         # Highlight Region of Absence
+
         region_of_absence_right = Rectangle(
             width=a * (0.85 **3),
             height=(axes.y_range[1] + 2) * 0.85,
@@ -242,6 +249,7 @@ class PlotCurve(Scene):
         region_of_absence_right.shift(axes.coords_to_point(-a / 2, 0))
         region_of_absence_left.shift(axes.coords_to_point((axes.y_range[1]+a)/2,0))
 
+        # Highlighting the absence part
         self.play(Create(region_of_absence_right),Create(region_of_absence_left))
         self.wait(2)
         self.play(FadeOut(region_of_absence_left),FadeOut(region_of_absence_right))
@@ -253,8 +261,9 @@ class PlotCurve(Scene):
         self.wait(2)
 
         removeText(region_texts)
-
-        to_fade_out = VGroup(
+        
+        # Group different parts
+        setup = VGroup(
             curve,
             dot,
             tangent_line,
@@ -267,7 +276,8 @@ class PlotCurve(Scene):
             curve_eqn_text
         )
 
-        self.play(FadeOut(to_fade_out),run_time = 2)
+        #remove all the 
+        self.play(FadeOut(setup),run_time = 2)
         
         # Final Result
         new_axes = Axes(
@@ -280,6 +290,7 @@ class PlotCurve(Scene):
                 "tip_length": 0.1,
             },
         )
+
         # Create a new curve
         new_curve = ImplicitFunction(
             curve_equation,
@@ -293,4 +304,6 @@ class PlotCurve(Scene):
         self.play(Write(curve_eqn_text))
         self.play(Create(new_axes), run_time=2)
         self.play(Create(new_curve), run_time=5)
+
+        # Last wait
         self.wait(3)
