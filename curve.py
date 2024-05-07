@@ -3,7 +3,7 @@ from manim import *
 class ConicsAnimation(Scene):
     def construct(self):
         # Title
-        title = Text("Curve Tracing", font_size=48)
+        title = Text("Curve Tracing", font_size=48, color=RED)
         title.shift(3 * UP)
         self.play(Write(title), run_time = 2)
         self.wait(0.2)
@@ -13,14 +13,14 @@ class ConicsAnimation(Scene):
         self.play(Write(text), run_time = 2)
         self.wait(0.2)
 
-        eqn = MathTex("x^{3} + y^{3} = 3axy", font_size=45)
+        eqn = MathTex("x^{3} + y^{3} = 3axy", font_size=50)
         self.play(Write(eqn))
-        self.wait()
+        self.wait(1)
         self.play(FadeOut(eqn))
 
         self.play(FadeOut(title), FadeOut(text))
 
-        eqn.shift(3 * UP + 4 * LEFT)
+        eqn.shift(2.8 * UP + 4 * LEFT)
         self.play(Write(eqn))
         self.wait(1)
 
@@ -59,12 +59,12 @@ class ConicsAnimation(Scene):
 
         
         #Animation for Symmetry 
-        symm_line = DashedLine(start=axes.coords_to_point(-5, -5), end=axes.coords_to_point(5, 5), color=YELLOW)
+        symm_line = DashedLine(start=axes.coords_to_point(-4.5, -4.5), end=axes.coords_to_point(4.5, 4.5), color=YELLOW)
 
         self.play(Create(symm_line))
         self.wait(1)
 
-        label_symmetry = Text("Symmetry", color=WHITE, font_size=18)
+        label_symmetry = Text("Symmetry", color=YELLOW, font_size=18)
         label_symmetry.next_to(symm_line, UP+RIGHT, buff=SMALL_BUFF)
 
         self.play(Create(label_symmetry))
@@ -281,17 +281,17 @@ class ConicsAnimation(Scene):
 
         
 
-        Asymptote1 = MathTex("Highest", "\quad", " degree", "\quad", " term", "\quad", " of", "\quad", " x", "\quad", " is", "\quad", " x^{3}",font_size=40)
+        Asymptote1 = MathTex("Highest", "\quad", " degree", "\quad", " term", "\quad", " of", "\quad", " x", "\quad", " is", "\quad", " x^{3}",font_size=35)
         Asymptote1.shift(3 * LEFT + 1 * UP)
 
-        Asymptote2 = MathTex("Coeffient", "\quad", " of", "\quad", " x^{3} ", "\quad", "is", "\quad", " 1",font_size=40)
+        Asymptote2 = MathTex("Coeffient", "\quad", " of", "\quad", " x^{3} ", "\quad", "is", "\quad", " 1",font_size=35)
         Asymptote2.shift(3 * LEFT + 0.4 * UP)
 
-        Asymptote3 = MathTex("1 = 0 \Rightarrow", "\quad", " doesn't", "\quad", " yield", "\quad", " any", "\quad", " value",font_size=40)
+        Asymptote3 = MathTex("1 = 0 \Rightarrow", "\quad", " doesn't", "\quad", " yield", "\quad", " any", "\quad", " value",font_size=35)
         Asymptote3.shift(3 * LEFT - 0.2 * UP)
 
-        Asymptote4 = Text("There is no asymptote parallel to x-axis",font_size=24, color=YELLOW)
-        Asymptote4.shift(3 * LEFT - 1 * UP)
+        Asymptote4 = Text("There is no asymptote parallel to x-axis",font_size=27, color=YELLOW)
+        Asymptote4.shift(3 * LEFT - 1.4 * UP)
 
         self.play(Create(Asymptote1))
         self.play(Create(Asymptote2))
@@ -302,13 +302,13 @@ class ConicsAnimation(Scene):
         self.play(FadeOut(Asymptote1),FadeOut(Asymptote2), FadeOut(Asymptote3), FadeOut(Asymptote4))
 
 
-        Asymptote_4 = Text("To find the asymptote parallel to y-axis,",font_size=40)
+        Asymptote_4 = Text("To find the asymptote parallel to y-axis,",font_size=22)
         Asymptote_4.shift(3 * LEFT + 1 * UP)
 
-        Asymptote_5 = Text(" we have to equate the coefficient of the ",font_size=40)
+        Asymptote_5 = Text(" we have to equate the coefficient of the ",font_size=22)
         Asymptote_5.shift(3 * LEFT + 0.5 * UP)
 
-        Asymptote_6 = Text("highest degree term of y to zero",font_size=40)
+        Asymptote_6 = Text("highest degree term of y to zero",font_size=22)
         Asymptote_6.shift(3 * LEFT)
 
         self.play(Create(Asymptote_4))
@@ -319,17 +319,17 @@ class ConicsAnimation(Scene):
         self.play(FadeOut(Asymptote_4),FadeOut(Asymptote_5), FadeOut(Asymptote_6))
 
 
-        Asymptote5 = MathTex("Highest", "\quad", " degree", "\quad", " term ", "\quad", "of", "\quad", " y", "\quad", " is ", "\quad", "y^{3}",font_size=26)
+        Asymptote5 = MathTex("Highest", "\quad", " degree", "\quad", " term ", "\quad", "of", "\quad", " y", "\quad", " is ", "\quad", "y^{3}",font_size=35)
         Asymptote5.shift(3 * LEFT + 1 * UP)
 
-        Asymptote6 = MathTex("Coeffient ", "\quad", "of", "\quad", " y^{3}", "\quad", " is", "\quad", " 1",font_size=26)
+        Asymptote6 = MathTex("Coeffient ", "\quad", "of", "\quad", " y^{3}", "\quad", " is", "\quad", " 1",font_size=35)
         Asymptote6.shift(3 * LEFT + 0.4 * UP)
 
-        Asymptote7 = MathTex("1 = 0 \Rightarrow", "\quad", " doesn't", "\quad", " yield ", "\quad", "any", "\quad", " value",font_size=26)
+        Asymptote7 = MathTex("1 = 0 \Rightarrow", "\quad", " doesn't", "\quad", " yield ", "\quad", "any", "\quad", " value",font_size=35)
         Asymptote7.shift(3 * LEFT - 0.2 * UP)
 
-        Asymptote8 = Text("There is no asymptote parallel to y-axis",font_size=24, color=YELLOW)
-        Asymptote8.shift(3 * LEFT - 1 * UP)
+        Asymptote8 = Text("There is no asymptote parallel to y-axis",font_size=27, color=YELLOW)
+        Asymptote8.shift(3 * LEFT - 1.4 * UP)
 
         self.play(Create(Asymptote5))
         self.play(Create(Asymptote6))
@@ -369,8 +369,6 @@ class ConicsAnimation(Scene):
         self.play(Write(obl3))
         self.wait(1)
 
-        self.play(FadeOut(obl1),FadeOut(obl2), FadeOut(obl11), FadeOut(obl3))
-
         self.play(Write(obl22))
         self.play(Write(obl4))
         self.play(Write(obl5))
@@ -381,7 +379,7 @@ class ConicsAnimation(Scene):
             y = -x -a
             return y
 
-        obl_asymp_points = [(x , obl_asymptote(x)) for x in np.arange(-5, 5, 0.1)]
+        obl_asymp_points = [(x , obl_asymptote(x)) for x in np.arange(-5, 4, 0.1)]
 
         obl_asymptote_curve = VGroup(
             *[Line(axes.coords_to_point(x1, y1), axes.coords_to_point(x2, y2), color=GREEN)
@@ -435,10 +433,10 @@ class ConicsAnimation(Scene):
         tang7.shift(3 * LEFT - 1.4 * UP)
 
         tang8 = MathTex("dy/dx = (ay - x^{2})/(y^{2} - ax)",font_size=30)
-        tang8.shift(3 * LEFT - 2.1 * UP)
+        tang8.shift(3 * LEFT - 1.9 * UP)
 
-        tang9 = Text("At (3a/2, 3a/2), dy/dx = -1",font_size=20)
-        tang9.shift(3 * LEFT - 2.9 * UP)
+        tang9 = Text("At (3a/2, 3a/2),  dy/dx = -1",font_size=24, color=YELLOW)
+        tang9.shift(3 * LEFT - 2.6 * UP)
 
         self.play(Write(Another_tangent))
         self.play(Write(tang1))
@@ -452,22 +450,20 @@ class ConicsAnimation(Scene):
         self.play(Write(tang4))
         self.play(Write(tang5))
         self.play(Write(tang6))
+        self.wait(1)
         self.play(Write(tang7))
         self.play(Write(tang8))
         self.play(Write(tang9))
-        self.wait(1)
-
-        self.play(FadeOut(tang4),FadeOut(tang5), FadeOut(tang6),FadeOut(tang7), FadeOut(tang8),FadeOut(tang9))
         self.wait(1)
 
         def tangent3(x):
             y = -1 * (x - 3*a/2) + 3*a/2
             return y
 
-        tang3_points = [(x , tangent3(x)) for x in np.arange(-5, 5, 0.1)]
+        tang3_points = [(x , tangent3(x)) for x in np.arange(-2, 6, 0.1)]
 
         tang3_curve = VGroup(
-            *[Line(axes.coords_to_point(x1, y1), axes.coords_to_point(x2, y2), color=GREEN)
+            *[Line(axes.coords_to_point(x1, y1), axes.coords_to_point(x2, y2), color=RED)
               for (x1, y1), (x2, y2) in zip(tang3_points[:-1], tang3_points[1:])]
         )
 
@@ -478,6 +474,7 @@ class ConicsAnimation(Scene):
         label_tangent4.next_to(tang3_curve, UP+LEFT, buff=SMALL_BUFF)
 
         self.play(Create(label_tangent4))
+        self.wait(1)
 
         self.play(FadeOut(tang4),FadeOut(tang5), FadeOut(tang6),FadeOut(tang7), FadeOut(tang8),FadeOut(tang9))
         self.wait(1)
