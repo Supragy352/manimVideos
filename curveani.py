@@ -110,7 +110,8 @@ class curve(Scene):
         asymp_x = Text("1=0 which is not possible , no asymptote ||el to x axis ").scale(0.4).next_to(asym_xaxis, DOWN)
         asym_yaxis = Text("||el to y-axis : coefficient of highest degree term of y equal to Zero").scale(0.4).next_to(asymp_x, DOWN)
         asymp_y = Text("a^2=0 which is not possible , no asymptote ||el to y axis ").scale(0.4).next_to(asym_yaxis, DOWN)
-        x_final = Text("Therefore, no asymptote ||el to x-axis").scale(0.4).next_to(asymp_y, DOWN)
+        x_final = Text("""Therefore, no asymptote ||el to x-axis and y-axis
+            And where as (0,0) is isolated point """).scale(0.4).next_to(asymp_y, DOWN)
         self.play(Write(asymptote))
         self.wait(0.1)
         self.play(Write(asym_xaxis))
