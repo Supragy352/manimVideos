@@ -7,7 +7,7 @@ class Crazy(ThreeDScene):
     config.frame_width = 32
     def construct(self):
         self.set_camera_orientation(phi=75 * DEGREES, theta=-180 * DEGREES)  
-        self.begin_ambient_camera_rotation(2000000000000000000000000000)
+        self.begin_ambient_camera_rotation(20000000000000)
         Disp_array= VMobject(200)
         for x in range(-20, 20):
             for y in range(-3, 3):
