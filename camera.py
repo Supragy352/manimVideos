@@ -1,26 +1,55 @@
 from manim import *
 
-class FollowingGraphCamera(MovingCameraScene):
+class DerivativeIntroduction(Scene):
+    config.pixel_height = 1080 
+    config.pixel_width = 1920
+    config.frame_height = 18
+    config.frame_width = 32
     def construct(self):
-        self.camera.frame.save_state()
+        title = Text("Introduction to Derivatives").scale(1.5)
+        title.to_edge(UP)
+        self.play(Write(title))
+        
+        intro_text = Text("""
+        In calculus, a derivative represents the rate at which a function is changing at any given point.
+        """)
+        intro_text.next_to(title, DOWN, buff=1)
+        self.play(FadeIn(intro_text))
+        
+        self.wait(2)
+        
+        func = MathTex("f(x) = x^2")
+        func.next_to(intro_text, DOWN, buff=1.5)
+        self.play(Write(func))
+        
+        tangent_line = MathTex("f'(x) = 2x")
+        tangent_line.next_to(func, DOWN, buff=1.5)
+        self.play(Write(tangent_line))
+        
+        self.wait(2)
 
-        # create the axes and the curve
-        ax = Axes(x_range=[-1, 10], y_range=[-1, 10])
-        graph = ax.plot(lambda x: np.sin(x), color=BLUE, x_range=[0, 3 * PI])
-
-        # create dots based on the graph
-        moving_dot = Dot(ax.i2gp(graph.t_min, graph), color=ORANGE)
-        dot_1 = Dot(ax.i2gp(graph.t_min, graph))
-        dot_2 = Dot(ax.i2gp(graph.t_max, graph))
-
-        self.add(ax, graph, dot_1, dot_2, moving_dot)
-        self.play(self.camera.frame.animate.scale(0.5).move_to(moving_dot))
-
-        def update_curve(mob):\
-            mob.move_to(moving_dot.get_center())
-
-        self.camera.frame.add_updater(update_curve)
-        self.play(MoveAlongPath(moving_dot, graph, rate_func=linear))
-        self.camera.frame.remove_updater(update_curve)
-
-        self.play(Restore(self.camera.frame))
+        self.play(FadeOut(func), FadeOut(tangent_line), FadeOut(intro_text))
+        
+        graph = Axes(
+            x_range=[-3, 3],
+            y_range=[-1, 9],
+            axis_config={"color": BLUE}
+        )
+        
+        graph_labels = graph.get_axis_labels(x_label="x", y_label="f(x)")
+        parabola = graph.plot(lambda x: x**2, color=YELLOW)
+        parabola_label = graph.get_graph_label(parabola, label="x^2")
+        
+        self.play(Create(graph), Write(graph_labels))
+        self.play(Create(parabola), Write(parabola_label))
+        
+        dot = Dot().move_to(graph.coords_to_point(1,1))
+        dot_2 = Dot().move_to(graph.coords_to_point(2,4))
+        dot_label = MathTex("A(1,1)").next_to(dot, RIGHT)
+        self.play(FadeIn(dot, dot_2, scale=0.5), Write(dot_label))
+        
+        tangent = graph.plot(lambda x: 2*x - 1, x_range=[-3, 3], color=RED)
+        tangent_label = graph.get_graph_label(tangent, label="Tangent Line", x_val=-7.1, direction=DOWN)
+        self.play(Create(tangent), Write(tangent_label))
+        
+        self.wait(3)
