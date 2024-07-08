@@ -1,8 +1,7 @@
-from logging import currentframe
 from manim import *
 
 class IntegrationIntro(Scene):
-	
+
 	# config.pixel_height = 1080 
 	# config.pixel_width = 1920
 	# config.frame_height = 18
@@ -15,14 +14,6 @@ class IntegrationIntro(Scene):
 		X = 9
 		Y = 6 
 		
-		# def curve_equation(x,y):
-		# 	return x**2 + y**2 - 1
-
-		# curve = ImplicitFunction(
-		# 	curve_equation,
-		# 	color=YELLOW
-		# )
-
 		axes = Axes(
 			x_range=[0,X + 1,1],
 			y_range=[0,Y,1],
@@ -62,12 +53,12 @@ class IntegrationIntro(Scene):
 
 			return rectangles
 				
-		rects_list = []
+		# rects_list = []
 
 		for i in range(1,4):
 			num_rects = 6 ** i
 			rectangles = makeRect(num_rects)
-			rects_list.append(rectangles)
+			# rects_list.append(rectangles)
 
 			self.play(Create(rectangles),run_time = 2)
 			self.wait(1)
