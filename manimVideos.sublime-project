@@ -2,7 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
 		}
 	],
 	"build_systems": [
@@ -36,5 +36,11 @@
 			"target": "terminus_exec",
 			"shell_cmd": "make opengl QUALITY=LOW FILE=$file_name",
 		},
-	]
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"python\" -u \"$file\""
+		},
+	],
 }

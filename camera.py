@@ -14,7 +14,7 @@ class DerivativeIntroduction(Scene):
         In calculus, a derivative represents the rate at which a function is changing at any given point.
         """)
         intro_text.next_to(title, DOWN, buff=1)
-        self.play(FadeIn(intro_text))
+        self.play(FadeIn(intro_text))d
         
         self.wait(2)
         

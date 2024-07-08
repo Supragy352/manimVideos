@@ -6,8 +6,13 @@ class Crazy(ThreeDScene):
     config.frame_height = 32
     config.frame_width = 32
     def construct(self):
-        self.set_camera_orientation(phi=75 * DEGREES, theta=-180 * DEGREES)  
-        self.begin_ambient_camera_rotation(2)
+        self.set_camera_orientation(phi=75 * DEGREES, theta=90 * DEGREES)  
+        self.begin_ambient_camera_rotation(1)
+
+        y = Text("?", font_size= 500)
+        self.play(Write(y), run_time=3)
+        self.wait(5)
+
         Disp_array= VMobject(200)
         for x in range(-3, 3):
             for y in range(-3, 3):
