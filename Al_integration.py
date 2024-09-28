@@ -34,7 +34,7 @@ class IntegrationIntro(Scene):
 		graph = VGroup(axes,curve)
 		graph.move_to(ORIGIN).shift(UP * 0.5)
 		self.play(Create(axes),Create(curve))
-		self.wait(3)
+		self.wait(1)
 
 		def makeRect(num_rects):
 			rectangles = VGroup()

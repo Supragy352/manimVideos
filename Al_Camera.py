@@ -3,7 +3,7 @@ from manim import *
 class Crazy(ThreeDScene):
     config.pixel_width = 3840
     config.pixel_width = 2160
-    config.frame_height = 32
+    config.frame_height = 16
     config.frame_width = 32
     def construct(self):
         self.set_camera_orientation(phi=75 * DEGREES, theta=-180 * DEGREES)  

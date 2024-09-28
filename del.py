@@ -1,85 +1,127 @@
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
+# from manim import *
+# import matplotlib.pyplot as plt
 
-# Example Data
-crop_yield_data = {
-    'Crop': ['Wheat', 'Rice', 'Corn', 'Soybean'],
-    'Predicted Yield': [3.0, 4.2, 3.5, 2.8],
-    'Actual Yield': [2.9, 4.1, 3.4, 2.7]
-}
+# class Example(Scene):
+#     def construct(self):
+#         self.camera.background_color= WHITE
+#         fig = plt.figure(dpi=300)
+#         ax = fig.add_subplot(projection='3d')
+#         x=np.full((21,27,27),0)
+#         x[10,10,10]=1
+#         x[10,16,10]=1
+#         ax.voxels(x, edgecolor='k')
+#         fig.canvas.draw()
+#         buf = fig.canvas.buffer_rgba()
+#         img = ImageMobject(buf).scale(1)
+#         plt.close(fig)
+#         self.add(img)
 
-soil_health_data = {
-    'Region': ['North', 'South', 'East', 'West'],
-    'Nitrogen': [60, 55, 70, 65],
-    'Phosphorus': [40, 45, 35, 50],
-    'Potassium': [80, 85, 75, 90]
-}
+# from manim import *
+# from sklearn.datasets import make_blobs
+# import matplotlib.pyplot as plt
+# import seaborn as sns
 
-weather_data = {
-    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    'Temperature': [5, 7, 10, 15, 20, 25, 30, 28, 24, 18, 12, 7],
-    'Precipitation': [50, 45, 60, 55, 70, 75, 80, 65, 60, 55, 50, 45]
-}
+# sns.set()
+# MAX_N=400
+# X, y = make_blobs(
+#     n_samples=MAX_N,
+#     n_features=2,
+#     centers=3,
+#     cluster_std=0.8,
+#     shuffle=True,
+#     random_state=0,
+# )
+# def plot(param):
+#     fig, ax = plt.subplots(figsize = (4,3) , dpi = 250)
+#     param = int(param)
+#     X_show = X[:param, :]
+#     ax.set_xlim(-4,4)
+#     ax.set_ylim(-1,6)
 
-market_price_data = {
-    'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    'Wheat': [200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300, 310],
-    'Rice': [300, 310, 320, 330, 340, 350, 360, 370, 380, 390, 400, 410]
-}
+#     ax.scatter(X_show[:, 0], X_show[:, 1], s=50, c="lightgray", edgecolor="black")
+#     fig.canvas.draw()
+#     img = ImageMobject(fig.canvas.buffer_rgba())
+#     plt.close(fig)
+#     return img
 
-pest_disease_data = {
-    'Disease': ['Blight', 'Mildew', 'Rust', 'Wilt'],
-    'Occurrences': [40, 30, 20, 10]
-}
 
-# Convert to DataFrame
-df_crop_yield = pd.DataFrame(crop_yield_data)
-df_soil_health = pd.DataFrame(soil_health_data)
-df_weather = pd.DataFrame(weather_data)
-df_market_price = pd.DataFrame(market_price_data)
-df_pest_disease = pd.DataFrame(pest_disease_data)
+# class ShowScreenResolution(Scene):
+#     def construct(self):
+#         pyFrame = config["pixel_height"]  # 1080 default
+#         pxFrame = config["pixel_width"]  # 1920 #default
+#         frame_width = config["frame_width"]
+#         frame_height = config["frame_height"]
+#         d1 = Line(frame_width * LEFT / 2, frame_width * RIGHT / 2).to_edge(DOWN)
+#         self.add(d1)
+#         self.add(Tex(str(pxFrame)).scale(0.5).next_to(d1, DOWN, buff=0))
+#         d2 = Line(frame_height * UP / 2, frame_height * DOWN / 2).to_edge(LEFT)
+#         self.add(d2)
+#         self.add(
+#             Tex(str(pyFrame)).scale(0.5).rotate(90 * DEGREES).next_to(d2, LEFT, buff=0)
+#         )
+#         img = plot(0)
+#         self.add(Text("My animated plot").next_to(img,UP))
+#         self.play(FadeIn(img))
+#         tr_amplitude = ValueTracker(0)
+#         def update_image(mob):
+#             new_mob = plot(tr_amplitude.get_value())
+#             mob.become(new_mob)
 
-# Plot Crop Yield Predictions
-plt.figure(figsize=(10, 6))
-sns.barplot(x='Crop', y='value', hue='variable', data=pd.melt(df_crop_yield, ['Crop']))
-plt.title('Predicted vs. Actual Crop Yield')
-plt.ylabel('Yield (tons per hectare)')
-plt.show()
+#         img.add_updater(update_image)
+#         self.play(tr_amplitude.animate.set_value(MAX_N), run_time=3)
 
-# Plot Soil Health Heatmap
-plt.figure(figsize=(10, 6))
-sns.heatmap(df_soil_health.set_index('Region'), annot=True, cmap='YlGnBu')
-plt.title('Soil Health Nutrient Levels')
-plt.ylabel('Region')
-plt.xlabel('Nutrient Levels (mg/kg)')
-plt.show()
 
-# Plot Weather Trends
-fig, ax1 = plt.subplots(figsize=(12, 6))
-ax1.set_xlabel('Month')
-ax1.set_ylabel('Temperature (°C)', color='tab:blue')
-ax1.plot(df_weather['Month'], df_weather['Temperature'], color='tab:blue', label='Temperature')
-ax1.tick_params(axis='y', labelcolor='tab:blue')
-ax2 = ax1.twinx()
-ax2.set_ylabel('Precipitation (mm)', color='tab:green')
-ax2.plot(df_weather['Month'], df_weather['Precipitation'], color='tab:green', label='Precipitation')
-ax2.tick_params(axis='y', labelcolor='tab:green')
-fig.tight_layout()
-plt.title('Monthly Weather Trends')
-plt.show()
 
-# Plot Market Prices
-plt.figure(figsize=(10, 6))
-sns.lineplot(x='Month', y='value', hue='variable', data=pd.melt(df_market_price, ['Month']))
-plt.title('Historical and Forecasted Crop Prices')
-plt.ylabel('Price (USD per ton)')
-plt.show()
+# class Example(Scene):
+#     def construct(self):
+#         x = np.linspace(0, 30, 400)
+#         amplitude = 0.5
+#         self.camera.background_color = "#ece6e2"
+#         fig, ax = plt.subplots()
+#         ax.plot(x, amplitude * np.sin(x))
+#         ax.set_ylim(-1, 1)
+#         plt.savefig("test.svg")
+#         plt.close(fig)
+#         img = SVGMobject("test.svg").scale(3)
+#         self.add(img)
+#         for i in img.submobjects[:-18]: # replace with img.submobjects
+#             self.play(i.animate.set_color(ORANGE), run_time = 0.1)
 
-# Plot Pest and Disease Occurrences
-plt.figure(figsize=(10, 6))
-plt.pie(df_pest_disease['Occurrences'], labels=df_pest_disease['Disease'], autopct='%1.1f%%', startangle=140, colors=sns.color_palette('pastel'))
-plt.title('Distribution of Crop Diseases')
-plt.axis('equal')
-plt.show()
+
+from manim import *
+ 
+# class BarChartExample(Scene):
+#     def construct(self):
+#         chart = BarChart(
+#             values=[-5, 40, -10, 20, -3],
+#             bar_names=["one", "two", "three", "four", "five"],
+#             y_range=[-20, 50, 10],
+#             y_length=6,
+#             x_length=10,
+#             x_axis_config={"font_size": 36},
+#         )
+ 
+#         c_bar_lbls = chart.get_bar_labels(font_size=48)
+ 
+#         self.add(chart, c_bar_lbls)
+
+
+class ChangeBarValuesExample(Scene):
+    def construct(self):
+        values=[28, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        final_values = [33.1, 36, 29.25, 33.58, 4, 4.5, 5, 4.3, 7.2, 5.5]
+ 
+        chart = BarChart(
+            values,
+            y_range=[0, 40, 5],
+            y_length=6.5,
+            x_length=10,
+            y_axis_config={"font_size": 24},
+        )
+        self.play(Create(chart))
+        self.wait(2)
+ 
+        self.play(chart.animate.change_bar_values(final_values), run_time=3)
+        self.play(Create(chart.get_bar_labels(font_size=36))) 
+ 
+        self.wait(3)

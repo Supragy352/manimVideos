@@ -1,11 +1,12 @@
 from manim import *
 
-class ScreenGraph(Scene):
-    config.pixel_height = 1080
-    config.pixel_width = 1920
-    config.frame_height = 18.0
-    config.frame_width = 32.0
-    
+class TypesParameters(Scene):
+
+    config.pixel_height=1080
+    config.pixel_width=1920
+    config.frame_height=18
+    config.frame_width=32
+
     def construct(self):    
         positions = [
             LEFT * 4 + UP * 2,       
@@ -18,20 +19,16 @@ class ScreenGraph(Scene):
 
             dot = Dot(point=ORIGIN, color=WHITE)
                         
-            screen = Rectangle(width=36, height=21, color=WHITE)
+            screen = Rectangle(width=40, height=25, color=WHITE, stroke_width=5)
             screen.scale(0.1)
             screen.move_to(dot.get_center())
 
             self.play(Create(dot))            
             self.play(Transform(dot, screen))
             
-            axes = Axes(
-                x_range=[-3.5, 3.5, 1], y_range=[-1, 1, 0.5],
-                axis_config={"color": WHITE}
-            )
-            graph = axes.plot(lambda x: np.sin(x), color=YELLOW)
+            axes = Text("Anooj", font_size=150)
             
-            graph_group = VGroup(axes, graph).scale(0.2)  
+            graph_group = VGroup(axes).scale(0.2)  
             graph_group.move_to(screen.get_center())
 
             self.play(Create(graph_group))

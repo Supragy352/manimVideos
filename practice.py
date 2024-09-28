@@ -11,7 +11,7 @@ import numpy as np
 
 class OpeningManimExample(Scene):
     def construct(self):
-        intro_words = Text("""
+        intro_words = MathTex("""
             The original motivation for manim was to
             better illustrate mathematical functions
             as transformations.
@@ -31,10 +31,9 @@ class OpeningManimExample(Scene):
         )
         linear_transform_words.arrange(RIGHT)
         linear_transform_words.to_edge(UP)
-        linear_transform_words
 
         self.play(
-            ShowCreation(grid),
+            Create(grid),
             FadeTransform(intro_words, linear_transform_words)
         )
         self.wait()
@@ -46,13 +45,13 @@ class OpeningManimExample(Scene):
         moving_c_grid = c_grid.copy()
         moving_c_grid.prepare_for_nonlinear_transform()
         c_grid.set_stroke(BLUE_E, 1)
-        c_grid.add_coordinate_labels(font_size=24)
-        complex_map_words = TexText("""
+        # c_grid.add_coordinate_labels(font_size=24)
+        complex_map_words = Text("""
             Or thinking of the plane as $\\mathds{C}$,\\\\
             this is the map $z \\rightarrow z^2$
         """)
         complex_map_words.to_corner(UR)
-        complex_map_words.set_backstroke(width=5)
+        complex_map_words.set_backstroke(3)
 
         self.play(
             FadeOut(grid),

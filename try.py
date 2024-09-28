@@ -1,6 +1,17 @@
 from manim import *
 
 class ZoomInOutTitle(Scene):
+    CONFIG = {
+        "color":RED_B,
+        "buff":0.3,
+        "lateral":0.3,
+        "invert":False,
+        "dashed_segment_length":0.09,
+        "dashed":True,
+        "ang_arrows":30*DEGREES,
+        "size_arrows":0.2,
+        "stroke":2.4,
+    }
     def construct(self):
         # Create the first letter with a larger font size
         first_letter = Text("C", font_size=164, color=WHITE)
