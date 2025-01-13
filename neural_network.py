@@ -1,4 +1,4 @@
-from manimlib import *
+from manim import *
 
 class myNeuralNetwork(Scene):
 	def construct(self):
@@ -27,7 +27,7 @@ class NeuralNetworkMobject(VGroup):
         "edge_propogation_color": YELLOW,
         "edge_propogation_time": 1,
         "max_shown_neurons": 16,
-        "brace_for_large_layers": True,
+        # "brace_for_large_layers": True,
         "average_shown_activation_of_large_layer": True,
         "include_output_labels": False,
         "arrow": False,
@@ -39,6 +39,16 @@ class NeuralNetworkMobject(VGroup):
     def __init__(self, neural_network, *args, **kwargs):
         VGroup.__init__(self, *args, **kwargs)
         self.layer_sizes = neural_network
+        self.max_shown_neurons = 10
+        self.neuron_radius = 2
+        self.neuron_stroke_width = 2
+        self.layer_to_layer_buff = 1  # Define layer buffer (space between layers)
+        self.neuron_to_neuron_buff = 0.5  # Define neuron buffer (space between neurons)
+
+        self.input_neuron_color = BLUE  # Color for input layer neurons
+        self.hidden_layer_neuron_color = GREEN  # Color for hidden layer neurons
+        self.output_neuron_color = RED  # Color for output layer neurons
+
         self.add_neurons()
         self.add_edges()
         self.add_to_back(self.layers)
@@ -72,7 +82,7 @@ class NeuralNetworkMobject(VGroup):
                 stroke_color=self.get_nn_fill_color(index),
                 stroke_width=self.neuron_stroke_width,
                 fill_color=BLACK,
-                fill_opacity=self.neuron_fill_opacity,
+                # fill_opacity=self.neuron_fill_opacity,
             )
             for x in range(n_neurons)
         ])
@@ -86,7 +96,7 @@ class NeuralNetworkMobject(VGroup):
         layer.add(neurons)
 
         if size > n_neurons:
-            dots = TexMobject("\\vdots")
+            dots = MathTex("\\vdots")
             dots.move_to(neurons)
             VGroup(*neurons[:len(neurons) // 2]).next_to(
                 dots, UP, MED_SMALL_BUFF
@@ -96,14 +106,14 @@ class NeuralNetworkMobject(VGroup):
             )
             layer.dots = dots
             layer.add(dots)
-            if self.brace_for_large_layers:
-                brace = Brace(layer, LEFT)
-                brace_label = brace.get_tex(str(size))
-                layer.brace = brace
-                layer.brace_label = brace_label
-                layer.add(brace, brace_label)
+        #     if self.brace_for_large_layers:
+        #         brace = Brace(layer, LEFT)
+        #         brace_label = brace.get_tex(str(size))
+        #         layer.brace = brace
+        #         layer.brace_label = brace_label
+        #         layer.add(brace, brace_label)
 
-        return layer
+        # return layer
     # Helper method for constructor
     def add_edges(self):
         self.edge_groups = VGroup()
